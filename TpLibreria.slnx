@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="TpLibreria.Datos/TpLibreria.Datos.csproj" />
+  <Project Path="TpLibreria.Entidades/TpLibreria.Entidades.csproj" />
+  <Project Path="TpLibreria.Ioc/TpLibreria.Ioc.csproj" />
+  <Project Path="TpLibreria.Servicios/TpLibreria.Servicios.csproj" />
+  <Project Path="TpLibreria.Windows/TpLibreria.Windows.csproj" />
+</Solution>
