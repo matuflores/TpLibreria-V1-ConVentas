@@ -231,13 +231,13 @@ namespace TpLibreria.Servicios.Servicios
                         continue;
                     }
 
-                    if (libro is LibroFisico fisico &&
-                        fisico.Stock > int.MaxValue - detalle.Cantidad)
-                    {
-                        errores.Add(
-                            $"No se puede restituir el stock de {libro.Titulo}.");
-                        continue;
-                    }
+                    //if (libro is LibroFisico fisico &&
+                    //    fisico.Stock > int.MaxValue - detalle.Cantidad)
+                    //{
+                    //    errores.Add(
+                    //        $"No se puede restituir el stock de {libro.Titulo}.");
+                    //    continue;
+                    //}//esto para que no se pase del maximo de int, si el stock es 2.147.483.647 y la venta era de 10 libros, no se puede restituir el stock porque se pasa del maximo de int.
 
                     libros.Add((libro, detalle.Cantidad));
                 }

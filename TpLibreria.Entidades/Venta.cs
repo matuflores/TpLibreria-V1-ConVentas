@@ -22,12 +22,12 @@ namespace TpLibreria.Entidades
         public IReadOnlyCollection<DetalleVenta> Detalles =>
             _detalles.AsReadOnly();//el IREADONLY es para que no se pueda modificar la lista desde afuera de la entidad, solo se puede modificar desde adentro de la entidad, con el método AgregarDetalle
 
-        private Venta() { } // EF Core
+        private Venta() { } //EF que hace uso de reflection necesita un constructor privado para poder crear instancias de la clase Venta, pero no queremos que se pueda crear una venta sin pasarle los parámetros necesarios, por eso el constructor público tiene parámetros y el privado no.
 
         public Venta(int clienteId, TipoVenta tipoVenta)
         {
             
-            if (clienteId <= 0)//cambie que carlos valida mayor a 0 y yo que sea mayor o igual a 0, porque no existe un cliente con id 0, y si se pasa un id 0 es un error
+            if (clienteId <= 0)
                 throw new ArgumentOutOfRangeException(
                     nameof(clienteId));
             if (!Enum.IsDefined(tipoVenta))
